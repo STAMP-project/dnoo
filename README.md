@@ -3,6 +3,14 @@ DNOO
 
 A very simple application to test the tests tools, but with a multimodule structure and tests using several packages. :-))))
 
+Running tests
+-------------
+mnv package
+
+Running Desscartes
+------------------
+mvn descartes:descartes
+
 Application classes
 -------------------
 ![Application classes](docs/dnoo_classes.png)
