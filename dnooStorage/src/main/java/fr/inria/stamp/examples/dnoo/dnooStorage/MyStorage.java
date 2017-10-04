@@ -22,7 +22,7 @@ public class MyStorage
    public static void deleteFile(String fileName)
    {
       String methodName = "deleteFile";
-      MyLogger.Instance.entering("MyStorage", methodName);
+      MyLogger.getLogger().entering("MyStorage", methodName);
 
       File theFile = null;
 
@@ -33,38 +33,38 @@ public class MyStorage
          theFile.delete();
       }
 
-      MyLogger.Instance.exiting("MyStorage", methodName);
+      MyLogger.getLogger().exiting("MyStorage", methodName);
    }
 
    // **********************************************************************
    public MyStorage()
    {
       String methodName = "MyStorage";
-      MyLogger.Instance.entering(getClass().getName(), methodName);
+      MyLogger.getLogger().entering(getClass().getName(), methodName);
 
       FileName = "my_storage.txt";
       MyData = new ArrayList<String>();
 
-      MyLogger.Instance.exiting(getClass().getName(), methodName);
+      MyLogger.getLogger().exiting(getClass().getName(), methodName);
    }
 
    // **********************************************************************
    public MyStorage(String fileName)
    {
       String methodName = "MyStorage_String";
-      MyLogger.Instance.entering(getClass().getName(), methodName);
+      MyLogger.getLogger().entering(getClass().getName(), methodName);
 
       this.FileName = fileName;
       MyData = new ArrayList<String>();
 
-      MyLogger.Instance.exiting(getClass().getName(), methodName);
+      MyLogger.getLogger().exiting(getClass().getName(), methodName);
    }
 
    // **********************************************************************
    public void readData()
    {
       String methodName = "readData";
-      MyLogger.Instance.entering(getClass().getName(), methodName);
+      MyLogger.getLogger().entering(getClass().getName(), methodName);
 
       BufferedReader myBuffer = null;
       FileReader myFile = null;
@@ -100,14 +100,14 @@ public class MyStorage
          System.out.println("Error: closing " + FileName);
       }
 
-      MyLogger.Instance.exiting(getClass().getName(), methodName);
+      MyLogger.getLogger().exiting(getClass().getName(), methodName);
    }
 
    // **********************************************************************
    public void saveData()
    {
       String methodName = "saveData";
-      MyLogger.Instance.entering(getClass().getName(), methodName);
+      MyLogger.getLogger().entering(getClass().getName(), methodName);
 
       try
       {
@@ -123,14 +123,14 @@ public class MyStorage
          System.out.println("Error: cannot write into " + FileName);
       }
 
-      MyLogger.Instance.exiting(getClass().getName(), methodName);
+      MyLogger.getLogger().exiting(getClass().getName(), methodName);
    }
 
    // **********************************************************************
    public boolean isEqual(MyStorage anotherStorage)
    {
       String methodName = "isEqual";
-      MyLogger.Instance.entering(getClass().getName(), methodName);
+      MyLogger.getLogger().entering(getClass().getName(), methodName);
 
       boolean areEqual = (getDataSize() == anotherStorage.getDataSize());
 
@@ -142,7 +142,7 @@ public class MyStorage
          } 
       }
 
-      MyLogger.Instance.exiting(getClass().getName(), methodName);
+      MyLogger.getLogger().exiting(getClass().getName(), methodName);
       return(areEqual);
    }
 
@@ -150,7 +150,7 @@ public class MyStorage
    public boolean dataAreEqual(ArrayList<String> otherData)
    {
       String methodName = "dataAreEqual";
-      MyLogger.Instance.entering(getClass().getName(), methodName);
+      MyLogger.getLogger().entering(getClass().getName(), methodName);
 
       boolean areEqual = (getDataSize() == otherData.size());
 
@@ -162,7 +162,7 @@ public class MyStorage
          } 
       }
 
-      MyLogger.Instance.exiting(getClass().getName(), methodName);
+      MyLogger.getLogger().exiting(getClass().getName(), methodName);
       return(areEqual);
    }
 
@@ -190,18 +190,18 @@ public class MyStorage
    // **********************************************************************
    public void addData(String aData)
    {
-      MyLogger.Instance.finest("IN : DataSize = " + Integer.toString(getDataSize())
+      MyLogger.getLogger().finest("IN : DataSize = " + Integer.toString(getDataSize())
          + " - aData = " + aData);
 
       MyData.add(aData);
 
-      MyLogger.Instance.finest("OUT: DataSize = " + Integer.toString(getDataSize()));
+      MyLogger.getLogger().finest("OUT: DataSize = " + Integer.toString(getDataSize()));
    }
 
    // **********************************************************************
    public void delData(String aData)
    {
-      MyLogger.Instance.finest("IN : DataSize = " + Integer.toString(getDataSize()));
+      MyLogger.getLogger().finest("IN : DataSize = " + Integer.toString(getDataSize()));
 
       boolean found = false;
 
@@ -214,7 +214,7 @@ public class MyStorage
          } 
       } 
 
-      MyLogger.Instance.finest("OUT: DataSize = " + Integer.toString(getDataSize())
+      MyLogger.getLogger().finest("OUT: DataSize = " + Integer.toString(getDataSize())
          + " - found = " + Boolean.toString(found));
    }
 

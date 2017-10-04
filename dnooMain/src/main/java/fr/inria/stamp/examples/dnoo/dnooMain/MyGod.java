@@ -82,7 +82,7 @@ public class MyGod
             }
          }
 
-         MyLogger.initLogs(logLevel);
+         MyLogger.setLevel(logLevel);
 
          HelloApp myApp = new HelloApp(indentCount, fileName);
          myApp.setShouldPrintOnStdout(printOnStdout);
@@ -93,7 +93,8 @@ public class MyGod
    // **********************************************************************
    public static void printHelp()
    {
-      System.out.println("fr.inria.stamp.examples.dnoo.MyGod");
+      System.out.println("DNOO");
+      System.out.println("----");
       System.out.println("Print on stdout a 'Hello World !' message formatted according to");
       System.out.println("<indentation_count>, and generate an output file");
       System.out.println("");

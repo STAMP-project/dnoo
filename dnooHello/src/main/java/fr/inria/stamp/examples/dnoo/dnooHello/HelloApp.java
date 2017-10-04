@@ -16,7 +16,7 @@ public class HelloApp
    public HelloApp()
    {
       String methodName = "HelloApp";
-      MyLogger.Instance.entering(getClass().getName(), methodName);
+      MyLogger.getLogger().entering(getClass().getName(), methodName);
 
       MyPrintCount = 1;
       MyTraces = null;
@@ -24,17 +24,17 @@ public class HelloApp
       ShouldPrintOnStdout = true;
       MyStorage.deleteFile(MyTracesName);
 
-      MyLogger.Instance.info("MyPrintCount = " + Integer.toString(MyPrintCount)
+      MyLogger.getLogger().info("MyPrintCount = " + Integer.toString(MyPrintCount)
          + " - MyTracesName = " + MyTracesName);
 
-      MyLogger.Instance.exiting(getClass().getName(), methodName);
+      MyLogger.getLogger().exiting(getClass().getName(), methodName);
    }
 
    // **********************************************************************
    public HelloApp(int printCount)
    {
       String methodName = "HelloApp_int";
-      MyLogger.Instance.entering(getClass().getName(), methodName);
+      MyLogger.getLogger().entering(getClass().getName(), methodName);
 
       MyPrintCount = printCount;
       MyTraces = null;
@@ -42,17 +42,17 @@ public class HelloApp
       ShouldPrintOnStdout = true;
       MyStorage.deleteFile(MyTracesName);
 
-      MyLogger.Instance.info("MyPrintCount = " + Integer.toString(MyPrintCount)
+      MyLogger.getLogger().info("MyPrintCount = " + Integer.toString(MyPrintCount)
          + " - MyTracesName = " + MyTracesName);
 
-      MyLogger.Instance.exiting(getClass().getName(), methodName);
+      MyLogger.getLogger().exiting(getClass().getName(), methodName);
    }
 
    // **********************************************************************
    public HelloApp(String tracesName)
    {
       String methodName = "HelloApp_String";
-      MyLogger.Instance.entering(getClass().getName(), methodName);
+      MyLogger.getLogger().entering(getClass().getName(), methodName);
 
       MyPrintCount = 1;
       MyTraces = null;
@@ -60,17 +60,17 @@ public class HelloApp
       ShouldPrintOnStdout = true;
       MyStorage.deleteFile(MyTracesName);
 
-      MyLogger.Instance.info("MyPrintCount = " + Integer.toString(MyPrintCount)
+      MyLogger.getLogger().info("MyPrintCount = " + Integer.toString(MyPrintCount)
          + " - MyTracesName = " + MyTracesName);
 
-      MyLogger.Instance.exiting(getClass().getName(), methodName);
+      MyLogger.getLogger().exiting(getClass().getName(), methodName);
    }
 
    // **********************************************************************
    public HelloApp(int printCount, String tracesName)
    {
       String methodName = "HelloApp_int_String";
-      MyLogger.Instance.entering(getClass().getName(), methodName);
+      MyLogger.getLogger().entering(getClass().getName(), methodName);
 
       MyPrintCount = printCount;
       MyTraces = null;
@@ -78,17 +78,17 @@ public class HelloApp
       ShouldPrintOnStdout = true;
       MyStorage.deleteFile(MyTracesName);
 
-      MyLogger.Instance.info("MyPrintCount = " + Integer.toString(MyPrintCount)
+      MyLogger.getLogger().info("MyPrintCount = " + Integer.toString(MyPrintCount)
          + " - MyTracesName = " + MyTracesName);
 
-      MyLogger.Instance.exiting(getClass().getName(), methodName);
+      MyLogger.getLogger().exiting(getClass().getName(), methodName);
    }
 
    // **********************************************************************
    public void run()
    {
       String methodName = "run";
-      MyLogger.Instance.entering(getClass().getName(), methodName);
+      MyLogger.getLogger().entering(getClass().getName(), methodName);
 
       String indent = "-";
       String countString = Integer.toString(MyPrintCount);
@@ -108,14 +108,14 @@ public class HelloApp
       {
          indent = indent + "-";
       }
-      MyLogger.Instance.fine("indent = '" + indent + "'");
+      MyLogger.getLogger().fine("indent = '" + indent + "'");
       myPrint(indent);
       myPrint(indent + " Hello World !");
       myPrint(indent);
 
       MyTraces.saveData();
 
-      MyLogger.Instance.exiting(getClass().getName(), methodName);
+      MyLogger.getLogger().exiting(getClass().getName(), methodName);
    }
 
    // **********************************************************************

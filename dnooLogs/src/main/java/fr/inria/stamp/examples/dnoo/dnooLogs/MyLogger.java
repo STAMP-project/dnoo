@@ -3,6 +3,7 @@ package  fr.inria.stamp.examples.dnoo.dnooLogs;
 // **********************************************************************
 import java.util.logging.*;
 import java.io.IOException;
+import java.io.File;
 
 // **********************************************************************
 public class MyLogger
@@ -11,52 +12,63 @@ public class MyLogger
    // public
    // **********************************************************************
    // ******** attributes
-   public static Logger Instance = Logger.getLogger(MyLogger.class.getName());
+   public static String LogFileName = "dnoo.log";
 
-   // ******** methods
-   // **********************************************************************
-   public static void initLogs(String level)
+   // Level: String, public read/write class attribute
+   // levels: "OFF", "SEVERE", "WARNING", "INFO", "CONFIG", "FINE", "FINER",
+   //   "FINEST", "ALL"
+   public static String getLevel()
    {
-      Handler logHandler = null;
-      Formatter logFormater = null;
-      boolean fileCreated = false;
+      Level currentLevel = getLogger().getLevel();
+      return(levelToString(currentLevel));
+   }
 
-      Instance.setUseParentHandlers(false);
-
-      try
-      {
-         logHandler = new FileHandler("dnoo.log", false);
-         logHandler.setFormatter(new SimpleFormatter());
-         fileCreated = true;
-      }
-      catch (Exception e)
-      {
-         logHandler = new ConsoleHandler();
-      }
-      Instance.addHandler(logHandler);
-
-      logHandler.setLevel(Level.ALL);
-      Instance.setLevel(stringToLevel(level));
-
-      if (fileCreated)
-      {
-         Instance.info("Log file created");
-      }
-      else
-      {
-         Instance.warning("Cannot create log file, redirecting logs to the console");
-      }
-      Instance.severe("checking log level: severe: Exiting initLogs");
-      Instance.warning("checking log level: warning: Exiting initLogs");
-      Instance.info("checking log level: info: Exiting initLogs");
-      Instance.config("checking log level: config: Exiting initLogs");
-      Instance.fine("checking log level: fine: Exiting initLogs");
-      Instance.finer("checking log level: finer: Exiting initLogs");
-      Instance.finest("checking log level: finest: Exiting initLogs");
+   public static void setLevel(String level)
+   {
+      getLogger().setLevel(stringToLevel(level));
+      Instance.StdLogHandler.setLevel(stringToLevel(level));
    }
 
    // **********************************************************************
-   public static Level stringToLevel(String level)
+   // ******** methods
+   public static Logger getLogger()
+   {
+      initLogs();
+      return(Instance.StandardLogger);
+   }
+
+   // **********************************************************************
+   public static void clearLogs()
+   {
+      File theFile = null;
+
+      if (Instance != null)
+      {
+         Instance.StdLogHandler = null;
+         Instance.StandardLogger = null;
+         Instance = null;
+      }
+      // delete file if it already exists
+      theFile = new File(LogFileName);
+      if (theFile.exists())
+      {
+         theFile.delete();
+      }
+
+      return;
+   }
+
+   // **********************************************************************
+   // private
+   // **********************************************************************
+   // ******** attributes
+   private static MyLogger Instance = null;
+   private Logger StandardLogger = null;
+   private Handler StdLogHandler = null;
+
+   // **********************************************************************
+   // ******** methods
+   private static Level stringToLevel(String level)
    {
       // levels: OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST, ALL
       Level theLevel = Level.WARNING;
@@ -102,6 +114,87 @@ public class MyLogger
    }
 
    // **********************************************************************
-   // private
+   private static String levelToString(Level level)
+   {
+      // levels: OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST, ALL
+      String theLevel = "WARNING";
+
+      if (level == Level.OFF)
+      {
+         theLevel = "OFF";
+      }
+      else if (level == Level.SEVERE)
+      {
+         theLevel = "SEVERE";
+      }
+      else if (level == Level.WARNING)
+      {
+         theLevel = "WARNING";
+      }
+      else if (level == Level.INFO)
+      {
+         theLevel = "INFO";
+      }
+      else if (level == Level.CONFIG)
+      {
+         theLevel = "CONFIG";
+      }
+      else if (level == Level.FINE)
+      {
+         theLevel = "FINE";
+      }
+      else if (level == Level.FINER)
+      {
+         theLevel = "FINER";
+      }
+      else if (level == Level.FINEST)
+      {
+         theLevel = "FINEST";
+      }
+      else if (level == Level.ALL)
+      {
+         theLevel = "ALL";
+      }
+
+      return(theLevel);
+   }
+
    // **********************************************************************
+   private static void initLogs()
+   {
+      Formatter logFormater = null;
+      boolean fileCreated = false;
+
+      if (Instance == null)
+      {
+         Instance = new MyLogger();
+         Instance.StandardLogger = Logger.getLogger(MyLogger.class.getName());
+         Instance.StandardLogger.setUseParentHandlers(false);
+   
+         try
+         {
+            Instance.StdLogHandler = new FileHandler(LogFileName, false);
+            Instance.StdLogHandler.setFormatter(new SimpleFormatter());
+            fileCreated = true;
+         }
+         catch (Exception e)
+         {
+            Instance.StdLogHandler = new ConsoleHandler();
+         }
+         Instance.StandardLogger.addHandler(Instance.StdLogHandler);
+   
+         Instance.StandardLogger.setLevel(Level.WARNING);
+         Instance.StdLogHandler.setLevel(Level.WARNING);
+   
+         if (fileCreated)
+         {
+            Instance.StandardLogger.info("Log file created");
+         }
+         else
+         {
+            Instance.StandardLogger.warning
+               ("Cannot create log file, redirecting logs to the console");
+         }
+      }
+   }
 }

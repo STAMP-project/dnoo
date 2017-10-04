@@ -44,6 +44,7 @@
                 <include>*.txt</include>
                 <include>*.traces</include>
                 <include>*.log</include>
+                <include>*.log.*</include>
               </includes>
               <followSymlinks>false</followSymlinks>
             </fileset>
