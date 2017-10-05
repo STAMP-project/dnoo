@@ -9,7 +9,7 @@ mnv package
 
 Running Desscartes
 ------------------
-mvn descartes:descartes
+mvn descartes:run
 
 Application classes
 -------------------
