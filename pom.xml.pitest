@@ -34,9 +34,9 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>fr.inria.stamp.plugins</groupId>
-        <artifactId>descartes-maven-plugin</artifactId>
-        <version>0.1.0</version>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <version>1.2.0</version>
         <!--
         <configuration>
           <targetClasses>

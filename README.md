@@ -3,9 +3,9 @@ DNOO
 
 A very simple application to test the tests tools, but with a multimodule structure and tests using several packages. :-))))
 
-Running tests
+Compiling
 -------------
-mnv package
+mnv install
 
 Running Desscartes
 ------------------
