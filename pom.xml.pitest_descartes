@@ -28,29 +28,21 @@
         <artifactId>junit</artifactId>
         <version>4.12</version>
       </dependency>
-
-      <dependency>
-        <groupId>org.pitest</groupId>
-        <artifactId>pitest-maven</artifactId>
-        <version>1.2.0</version>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
   <build>
     <plugins>
       <plugin>
-        <groupId>fr.inria.stamp.plugins</groupId>
-        <artifactId>pitmp-maven-plugin</artifactId>
-        <version>0.5.0</version>
-        <!-- you have to list all the package of the project that contain
-        #### classes you want to mutate
-        #### sorry for that didn't find a way to workaround the behavior 
-        #### for default values...yet ! :-)
-        -->
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <version>1.2.0</version>
         <configuration>
           <targetClasses>
-            <param>fr.inria.stamp.examples.dnoo*</param>
+            <param>fr.inria.stamp.examples.dnoo.dnooLogs*</param>
+            <param>fr.inria.stamp.examples.dnoo.dnooStorage*</param>
+            <param>fr.inria.stamp.examples.dnoo.dnooHello*</param>
+            <param>fr.inria.stamp.examples.dnoo.dnooMain*</param>
           </targetClasses>
           <!--
           -->
@@ -91,13 +83,13 @@
             <mutator>"A"</mutator>
           </mutators>
         </configuration>
-       <dependencies>
+        <dependencies>
           <dependency>
             <groupId>fr.inria.stamp</groupId>
             <artifactId>descartes</artifactId>
             <version>0.2-SNAPSHOT</version>
           </dependency>
-       </dependencies>
+        </dependencies>
       </plugin>
 
       <plugin>

@@ -37,17 +37,29 @@
         <groupId>org.pitest</groupId>
         <artifactId>pitest-maven</artifactId>
         <version>1.2.0</version>
-        <!--
         <configuration>
           <targetClasses>
+            <param>fr.inria.stamp.examples.dnoo*</param>
+            <!--
+            <param>fr.inria.stamp.examples.dnoo.dnooLogs*</param>
             <param>fr.inria.stamp.examples.dnoo.dnooStorage*</param>
             <param>fr.inria.stamp.examples.dnoo.dnooHello*</param>
+            <param>fr.inria.stamp.examples.dnoo.dnooMain*</param>
+            -->
           </targetClasses>
-          <targetClasses>
-            <param>fr.inria.stamp.examples.dnoo*</param>
-          </targetClasses>
+          <!--
+          -->
+          <excludedClasses>
+            <param>fr.inria.stamp.examples.dnoo.dnooLogs.MyUselessClass</param>
+          </excludedClasses>
+          <excludedMethods>
+            <param>fr.inria.stamp.examples.dnoo.dnooLogs.MyLogger.stringToLevel</param>
+            <param>fr.inria.stamp.examples.dnoo.dnooStorage.MyStorage.deleteFile</param>
+            <param>fr.inria.stamp.examples.dnoo.dnooHello.HelloApp.myPrint</param>
+            <param>fr.inria.stamp.examples.dnoo.dnooHello.HelloApp.cardMyTraces</param>
+            <param>fr.inria.stamp.examples.dnoo.dnooHello.HelloApp.getMyTraces</param>
+          </excludedMethods>
         </configuration>
-        -->
       </plugin>
 
       <plugin>

@@ -28,6 +28,12 @@
         <artifactId>junit</artifactId>
         <version>4.12</version>
       </dependency>
+
+      <dependency>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <version>1.2.0</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -35,19 +41,30 @@
     <plugins>
       <plugin>
         <groupId>fr.inria.stamp.plugins</groupId>
-        <artifactId>descartes-maven-plugin</artifactId>
-        <version>0.1.0</version>
-        <!--
+        <artifactId>pitmp-maven-plugin</artifactId>
+        <version>0.5.0</version>
+        <!-- you have to list all the package of the project that contain
+        #### classes you want to mutate
+        #### sorry for that didn't find a way to workaround the behavior 
+        #### for default values...yet ! :-)
+        -->
         <configuration>
-          <targetClasses>
-            <param>fr.inria.stamp.examples.dnoo.dnooStorage*</param>
-            <param>fr.inria.stamp.examples.dnoo.dnooHello*</param>
-          </targetClasses>
           <targetClasses>
             <param>fr.inria.stamp.examples.dnoo*</param>
           </targetClasses>
+          <!--
+          -->
+          <excludedClasses>
+            <param>fr.inria.stamp.examples.dnoo.dnooLogs.MyUselessClass</param>
+          </excludedClasses>
+          <excludedMethods>
+            <param>fr.inria.stamp.examples.dnoo.dnooLogs.MyLogger.stringToLevel</param>
+            <param>fr.inria.stamp.examples.dnoo.dnooStorage.MyStorage.deleteFile</param>
+            <param>fr.inria.stamp.examples.dnoo.dnooHello.HelloApp.myPrint</param>
+            <param>fr.inria.stamp.examples.dnoo.dnooHello.HelloApp.cardMyTraces</param>
+            <param>fr.inria.stamp.examples.dnoo.dnooHello.HelloApp.getMyTraces</param>
+          </excludedMethods>
         </configuration>
-        -->
       </plugin>
 
       <plugin>

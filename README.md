@@ -9,7 +9,7 @@ mnv install
 
 Running Desscartes
 ------------------
-mvn descartes:run
+mvn pitmp:run
 
 Application classes
 -------------------

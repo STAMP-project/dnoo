@@ -59,16 +59,17 @@ public class MyLogger
    }
 
    // **********************************************************************
-   // private
+   // protected
    // **********************************************************************
    // ******** attributes
-   private static MyLogger Instance = null;
-   private Logger StandardLogger = null;
-   private Handler StdLogHandler = null;
+   protected static MyLogger Instance = null;
+   protected Logger StandardLogger = null;
+   protected Handler StdLogHandler = null;
+   protected MyUselessClass MyValues = null;
 
    // **********************************************************************
    // ******** methods
-   private static Level stringToLevel(String level)
+   protected static Level stringToLevel(String level)
    {
       // levels: OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST, ALL
       Level theLevel = Level.WARNING;
@@ -114,7 +115,7 @@ public class MyLogger
    }
 
    // **********************************************************************
-   private static String levelToString(Level level)
+   protected static String levelToString(Level level)
    {
       // levels: OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST, ALL
       String theLevel = "WARNING";
@@ -160,7 +161,7 @@ public class MyLogger
    }
 
    // **********************************************************************
-   private static void initLogs()
+   protected static void initLogs()
    {
       Formatter logFormater = null;
       boolean fileCreated = false;
@@ -170,6 +171,7 @@ public class MyLogger
          Instance = new MyLogger();
          Instance.StandardLogger = Logger.getLogger(MyLogger.class.getName());
          Instance.StandardLogger.setUseParentHandlers(false);
+         Instance.MyValues = new MyUselessClass();
    
          try
          {
@@ -189,9 +191,11 @@ public class MyLogger
          if (fileCreated)
          {
             Instance.StandardLogger.info("Log file created");
+            Instance.MyValues.setAll();
          }
          else
          {
+            Instance.MyValues.clearAll();
             Instance.StandardLogger.warning
                ("Cannot create log file, redirecting logs to the console");
          }
