@@ -1,4 +1,4 @@
-package fr.inria.stamp.examples.dnoo.dnooHello;
+package fr.inria.stamp.examples.dnoo.dnooIntegration;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
@@ -8,21 +8,21 @@ import java.util.*;
 import fr.inria.stamp.examples.dnoo.dnooStorage.MyStorage;
 import fr.inria.stamp.examples.dnoo.dnooHello.HelloApp;
 
-public class MixedTest
+public class GlobalMixedTestBis
 {
    // **********************************************************************
    // public
    // **********************************************************************
    @Test
-   public void testMixed1HelloAppRun() throws Exception
+   public void testGlobalMixedBis1HelloAppRun() throws Exception
    {
       HelloApp myApp = null;
       File theFile = null;
       MyStorage fileContent = null;
-      int myCount = 40;
+      int myCount = 20;
       String countString = Integer.toString(myCount);
-      String helloString = "---------------------------------------- Hello World !";
-      String MyTracesName = "mixed1.traces";
+      String helloString = "-------------------- Hello World !";
+      String MyTracesName = "global_mixed51.traces";
       // String message;
 
       myApp = new HelloApp(myCount, MyTracesName);
@@ -39,11 +39,11 @@ public class MixedTest
    }
 
    @Test
-   public void testMixed2SaveReadData() throws Exception
+   public void testGlobalMixedBis2SaveReadData() throws Exception
    {
       MyStorage myFile = null;
       MyStorage mySecondFile = null;
-      String myFileName = "mixed2.txt";
+      String myFileName = "global_mixed52.txt";
       File theFile = null;
       ArrayList<String> myData = new ArrayList<String>();
 

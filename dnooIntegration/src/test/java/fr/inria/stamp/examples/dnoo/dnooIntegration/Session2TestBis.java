@@ -1,4 +1,4 @@
-package  fr.inria.stamp.examples.dnoo.dnooMain;
+package fr.inria.stamp.examples.dnoo.dnooIntegration;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
@@ -8,25 +8,25 @@ import fr.inria.stamp.examples.dnoo.dnooHello.HelloApp;
 import fr.inria.stamp.examples.dnoo.dnooStorage.MyStorage;
 import fr.inria.stamp.examples.dnoo.dnooLogs.MyLogger;
 
-public class Session2Test
+public class Session2TestBis
 {
    // **********************************************************************
    // public
    // **********************************************************************
    @Test
-   public void testSession2() throws Exception
+   public void testSessionBis2() throws Exception
    {
       HelloApp myApp = null;
       File theFile = null;
       MyStorage fileContent = null;
-      int myCount = 2;
+      int myCount = 7;
       String countString = Integer.toString(myCount);
-      String helloString = "-- Hello World !";
-      String myTracesName = "session2.traces";
+      String helloString = "------- Hello World !";
+      String myTracesName = "session52.traces";
       MyStorage logsContent = null;
 
       MyLogger.clearLogs();
-      MyLogger.LogFileName = "session2.log";
+      MyLogger.LogFileName = "session52.log";
       MyLogger.setLevel("FINE");
       MyLogger.getLogger().info("testing logs level FINE");
       assertEquals(MyLogger.getLevel(), "FINE");

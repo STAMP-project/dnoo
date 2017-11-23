@@ -5,7 +5,7 @@ currentD=`pwd`
 pomFile="pom.xml"
 fileExtension="pitest_descartes"
 sourcePomFile="pom.xml.$fileExtension"
-dirList=". dnooLogs dnooStorage dnooHello dnooMain"
+dirList=". dnooLogs dnooStorage dnooHello dnooMain dnooIntegration"
 
 mvn clean 2>&1 >/dev/null
 
@@ -16,6 +16,6 @@ do
       cp $theDir/$sourcePomFile $theDir/$pomFile
    fi
 done
-mvn install
+mvn install 2>&1 >/dev/null
 
 mvn org.pitest:pitest-maven:mutationCoverage 2>&1 | tee $fileExtension.traces

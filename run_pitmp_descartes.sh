@@ -5,7 +5,7 @@ currentD=`pwd`
 pomFile="pom.xml"
 fileExtension="pitmp_descartes"
 sourcePomFile="pom.xml.$fileExtension"
-dirList=". dnooLogs dnooStorage dnooHello dnooMain"
+dirList=". dnooLogs dnooStorage dnooHello dnooMain dnooIntegration"
 
 mvn clean 2>&1 >/dev/null
 
@@ -17,6 +17,6 @@ do
    fi
 done
 
-mvn install
+mvn install 2>&1 >/dev/null
 
 mvn pitmp:run 2>&1 | tee $fileExtension.traces

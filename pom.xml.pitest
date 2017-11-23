@@ -14,6 +14,7 @@
      <module>dnooStorage</module>
      <module>dnooHello</module>
      <module>dnooMain</module>
+     <module>dnooIntegration</module>
   </modules>
 
   <properties>
@@ -40,12 +41,6 @@
         <configuration>
           <targetClasses>
             <param>fr.inria.stamp.examples.dnoo*</param>
-            <!--
-            <param>fr.inria.stamp.examples.dnoo.dnooLogs*</param>
-            <param>fr.inria.stamp.examples.dnoo.dnooStorage*</param>
-            <param>fr.inria.stamp.examples.dnoo.dnooHello*</param>
-            <param>fr.inria.stamp.examples.dnoo.dnooMain*</param>
-            -->
           </targetClasses>
           <!--
           -->

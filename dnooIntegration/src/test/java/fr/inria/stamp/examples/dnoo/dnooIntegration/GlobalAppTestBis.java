@@ -1,4 +1,4 @@
-package  fr.inria.stamp.examples.dnoo.dnooMain;
+package fr.inria.stamp.examples.dnoo.dnooIntegration;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
@@ -8,21 +8,21 @@ import fr.inria.stamp.examples.dnoo.dnooHello.HelloApp;
 import fr.inria.stamp.examples.dnoo.dnooStorage.MyStorage;
 import fr.inria.stamp.examples.dnoo.dnooLogs.MyLogger;
 
-public class GlobalAppTest
+public class GlobalAppTestBis
 {
    // **********************************************************************
    // public
    // **********************************************************************
    @Test
-   public void testGlobalAppRun1() throws Exception
+   public void testGlobalAppBisRun1() throws Exception
    {
       HelloApp myApp = null;
       File theFile = null;
       MyStorage fileContent = null;
-      int myCount = 11;
+      int myCount = 5;
       String countString = Integer.toString(myCount);
-      String helloString = "----------- Hello World !";
-      String myTracesName = "global1.traces";
+      String helloString = "----- Hello World !";
+      String myTracesName = "global51.traces";
 
       MyLogger.clearLogs();
 
@@ -38,15 +38,15 @@ public class GlobalAppTest
 
    // **********************************************************************
    @Test
-   public void testGlobalAppRun2() throws Exception
+   public void testGlobalAppBisRun2() throws Exception
    {
       HelloApp myApp = null;
       File theFile = null;
       MyStorage fileContent = null;
-      int myCount = 8;
+      int myCount = 1;
       String countString = Integer.toString(myCount);
-      String helloString = "-------- Hello World !";
-      String myTracesName = "global2.traces";
+      String helloString = "- Hello World !";
+      String myTracesName = "global52.traces";
 
       MyLogger.clearLogs();
 
