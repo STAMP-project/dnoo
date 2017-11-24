@@ -7,7 +7,7 @@ Compiling
 -------------
 mnv install
 
-Running Desscartes
+Running Descartes
 ------------------
 run_pitmp_descartes.sh
 
