@@ -1,7 +1,7 @@
 DNOO
 **D**ish of **NOO**dles
 
-A very simple application to test testing tools, but with a multimodule structure. :-))))
+A very simple application to test testing tools, but with a multi module structure. :-))))
 
 Compiling
 -------------
