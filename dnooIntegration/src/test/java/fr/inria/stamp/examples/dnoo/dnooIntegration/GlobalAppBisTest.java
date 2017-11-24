@@ -8,7 +8,7 @@ import fr.inria.stamp.examples.dnoo.dnooHello.HelloApp;
 import fr.inria.stamp.examples.dnoo.dnooStorage.MyStorage;
 import fr.inria.stamp.examples.dnoo.dnooLogs.MyLogger;
 
-public class GlobalAppTestBis
+public class GlobalAppBisTest
 {
    // **********************************************************************
    // public

@@ -8,7 +8,7 @@ import fr.inria.stamp.examples.dnoo.dnooHello.HelloApp;
 import fr.inria.stamp.examples.dnoo.dnooStorage.MyStorage;
 import fr.inria.stamp.examples.dnoo.dnooLogs.MyLogger;
 
-public class Session2TestBis
+public class Session2BisTest
 {
    // **********************************************************************
    // public
@@ -59,8 +59,8 @@ public class Session2TestBis
       assertEquals("INFO: checking log level: info", logsContent.getData(7));
       assertEquals("CONFIG: checking log level: config", logsContent.getData(9));
       assertEquals("FINE: checking log level: fine", logsContent.getData(11));
-      assertEquals("INFO: MyPrintCount = 2 - MyTracesName = session2.traces",
+      assertEquals("INFO: MyPrintCount = 7 - MyTracesName = session52.traces",
          logsContent.getData(13));
-      assertEquals("FINE: indent = '--'", logsContent.getData(15));
+      assertEquals("FINE: indent = '-------'", logsContent.getData(15));
    }
 }

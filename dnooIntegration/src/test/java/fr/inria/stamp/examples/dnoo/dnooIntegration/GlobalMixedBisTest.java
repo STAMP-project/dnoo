@@ -8,7 +8,7 @@ import java.util.*;
 import fr.inria.stamp.examples.dnoo.dnooStorage.MyStorage;
 import fr.inria.stamp.examples.dnoo.dnooHello.HelloApp;
 
-public class GlobalMixedTestBis
+public class GlobalMixedBisTest
 {
    // **********************************************************************
    // public
