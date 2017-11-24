@@ -14,6 +14,7 @@ public class MyLogger
    // ******** attributes
    public static String LogFileName = "dnoo.log";
 
+   // **********************************************************************
    // Level: String, public read/write class attribute
    // levels: "OFF", "SEVERE", "WARNING", "INFO", "CONFIG", "FINE", "FINER",
    //   "FINEST", "ALL"
@@ -23,6 +24,7 @@ public class MyLogger
       return(levelToString(currentLevel));
    }
 
+   // ***********
    public static void setLevel(String level)
    {
       getLogger().setLevel(stringToLevel(level));
