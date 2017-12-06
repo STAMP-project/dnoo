@@ -10,11 +10,11 @@
   <version>1.0.0</version>
 
   <modules>
-     <module>dnooLogs</module>
-     <module>dnooStorage</module>
      <module>dnooHello</module>
-     <module>dnooMain</module>
      <module>dnooIntegration</module>
+     <module>dnooLogs</module>
+     <module>dnooMain</module>
+     <module>dnooStorage</module>
   </modules>
 
   <properties>
