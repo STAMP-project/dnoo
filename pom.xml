@@ -37,7 +37,7 @@
       <plugin>
         <groupId>fr.inria.stamp.plugins</groupId>
         <artifactId>pitmp-maven-plugin</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <!-- you have to list all the package of the project that contain
         -    classes you want to mutate
         -    sorry for that didn't find a way to workaround the behavior 
@@ -59,6 +59,32 @@
             <param>fr.inria.stamp.examples.dnoo.dnooHello.HelloApp.cardMyTraces</param>
             <param>fr.inria.stamp.examples.dnoo.dnooHello.HelloApp.getMyTraces</param>
           </excludedMethods>
+          <!--
+          -->
+          <mutationEngine>descartes</mutationEngine>
+          <mutators>
+            <mutator>void</mutator>
+            <mutator>null</mutator>
+            <mutator>true</mutator>
+            <mutator>false</mutator>
+            <mutator>empty</mutator>
+            <mutator>0</mutator>
+            <mutator>1</mutator>
+            <mutator>(byte)0</mutator>
+            <mutator>(byte)1</mutator>
+            <mutator>(short)1</mutator>
+            <mutator>(short)2</mutator>
+            <mutator>0L</mutator>
+            <mutator>1L</mutator>
+            <mutator>0.0</mutator>
+            <mutator>1.0</mutator>
+            <mutator>0.0f</mutator>
+            <mutator>1.0f</mutator>
+            <mutator>'\40'</mutator>
+            <mutator>'A'</mutator>
+            <mutator>""</mutator>
+            <mutator>"A"</mutator>
+          </mutators>
         </configuration>
         <dependencies>
           <dependency>
@@ -66,7 +92,12 @@
             <artifactId>pitest-maven</artifactId>
             <version>1.2.0</version>
           </dependency>
-        </dependencies>
+          <dependency>
+            <groupId>fr.inria.stamp</groupId>
+            <artifactId>descartes</artifactId>
+            <version>0.2-SNAPSHOT</version>
+          </dependency>
+       </dependencies>
       </plugin>
 
       <plugin>

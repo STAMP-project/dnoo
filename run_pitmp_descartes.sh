@@ -11,6 +11,8 @@ dirList=". dnooLogs dnooStorage dnooHello dnooMain dnooIntegration"
 
 debugOption=
 # debugOption="-e"
+shouldRunOption=
+# shouldRunOption="-DshouldRunOnly=true"
 
 mvn clean 2>&1 >/dev/null
 
@@ -27,7 +29,7 @@ mvn install 2>&1 >/dev/null
 
 if test "X$targetModules" = "X"
 then
-   mvn $debugOption pitmp:run 2>&1 | tee $fileExtension.traces
+   mvn $debugOption $shouldRunOption pitmp:run 2>&1 | tee $fileExtension.traces
 else
-   mvn $debugOption "-DtargetModules=$targetModules" pitmp:run 2>&1 | tee $fileExtension.traces
+   mvn $debugOption $shouldRunOption "-DtargetModules=$targetModules" pitmp:run 2>&1 | tee $fileExtension.traces
 fi
