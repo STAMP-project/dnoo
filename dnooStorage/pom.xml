@@ -5,9 +5,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>fr.inria.diversify</groupId>
+    <groupId>eu.stamp</groupId>
     <artifactId>dnoo</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
   </parent>
 
   <artifactId>dnooStorage</artifactId>

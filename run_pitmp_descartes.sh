@@ -11,8 +11,8 @@ dirList=". dnooLogs dnooStorage dnooHello dnooMain dnooIntegration"
 
 debugOption=
 # debugOption="-e"
-shouldRunOption=
-# shouldRunOption="-DshouldRunOnly=true"
+shouldDisplayOption=
+# shouldDisplayOption="-DshouldDisplayOnly=true"
 
 mvn clean 2>&1 >/dev/null
 
@@ -27,9 +27,15 @@ done
 
 mvn install 2>&1 >/dev/null
 
+echo "######## `date +%T`" 2>&1 | tee $fileExtension.traces
+
 if test "X$targetModules" = "X"
 then
-   mvn $debugOption $shouldRunOption pitmp:run 2>&1 | tee $fileExtension.traces
+   echo mvn $debugOption $shouldDisplayOption pitmp:run 2>&1 | tee -a $fileExtension.traces
+   mvn $debugOption $shouldDisplayOption pitmp:run 2>&1 | tee -a $fileExtension.traces
 else
-   mvn $debugOption $shouldRunOption "-DtargetModules=$targetModules" pitmp:run 2>&1 | tee $fileExtension.traces
+   echo mvn $debugOption $shouldDisplayOption "-DtargetModules=$targetModules" pitmp:run 2>&1 | tee -a $fileExtension.traces
+   mvn $debugOption $shouldDisplayOption "-DtargetModules=$targetModules" pitmp:run 2>&1 | tee -a $fileExtension.traces
 fi
+
+echo "######## `date +%T`" 2>&1 | tee -a $fileExtension.traces

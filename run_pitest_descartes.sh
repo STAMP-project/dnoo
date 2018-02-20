@@ -18,4 +18,9 @@ do
 done
 mvn install 2>&1 >/dev/null
 
-mvn org.pitest:pitest-maven:mutationCoverage 2>&1 | tee $fileExtension.traces
+echo "######## `date +%T`" 2>&1 | tee $fileExtension.traces
+
+echo mvn org.pitest:pitest-maven:mutationCoverage 2>&1 | tee -a $fileExtension.traces
+mvn org.pitest:pitest-maven:mutationCoverage 2>&1 | tee -a $fileExtension.traces
+
+echo "######## `date +%T`" 2>&1 | tee -a $fileExtension.traces
