@@ -14,5 +14,5 @@
 
 #### Relationships
 
-#### [Help on issue template](ISSUE_DOC.md) 
+#### [Help on issue template](https://github.com/STAMP-project/dnoo/blob/master/.github/ISSUE_DOC.md) 
 Preview to follow the link or open file .github/ISSUE_DOC.md
