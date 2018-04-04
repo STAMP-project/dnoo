@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>eu.stamp</groupId>
+    <groupId>eu.stamp-project</groupId>
     <artifactId>dnoo</artifactId>
     <version>1.0.1</version>
   </parent>

@@ -4,7 +4,7 @@
      xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>eu.stamp</groupId>
+  <groupId>eu.stamp-project</groupId>
   <artifactId>dnoo</artifactId>
   <packaging>pom</packaging>
   <version>1.0.1</version>
@@ -35,14 +35,14 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>eu.stamp</groupId>
+        <groupId>eu.stamp-project</groupId>
         <artifactId>pitmp-maven-plugin</artifactId>
-        <version>1.1.1</version>
+        <version>1.1.4</version>
         <!-- list all the packages of the project that contain classes you want to be mutated
         -->
         <configuration>
           <targetClasses>
-            <param>eu.stamp.examples.dnoo*</param>
+            <param>eu.stamp_project.examples.dnoo*</param>
           </targetClasses>
           <!-- property test
           <targetModules>
@@ -57,14 +57,14 @@
           <!--
           -->
           <excludedClasses>
-            <param>eu.stamp.examples.dnoo.dnooLogs.MyUselessClass</param>
+            <param>eu.stamp_project.examples.dnoo.dnooLogs.MyUselessClass</param>
           </excludedClasses>
           <excludedMethods>
-            <param>eu.stamp.examples.dnoo.dnooLogs.MyLogger.stringToLevel</param>
-            <param>eu.stamp.examples.dnoo.dnooStorage.MyStorage.deleteFile</param>
-            <param>eu.stamp.examples.dnoo.dnooHello.HelloApp.myPrint</param>
-            <param>eu.stamp.examples.dnoo.dnooHello.HelloApp.cardMyTraces</param>
-            <param>eu.stamp.examples.dnoo.dnooHello.HelloApp.getMyTraces</param>
+            <param>eu.stamp_project.examples.dnoo.dnooLogs.MyLogger.stringToLevel</param>
+            <param>eu.stamp_project.examples.dnoo.dnooStorage.MyStorage.deleteFile</param>
+            <param>eu.stamp_project.examples.dnoo.dnooHello.HelloApp.myPrint</param>
+            <param>eu.stamp_project.examples.dnoo.dnooHello.HelloApp.cardMyTraces</param>
+            <param>eu.stamp_project.examples.dnoo.dnooHello.HelloApp.getMyTraces</param>
           </excludedMethods>
         </configuration>
         <dependencies>
