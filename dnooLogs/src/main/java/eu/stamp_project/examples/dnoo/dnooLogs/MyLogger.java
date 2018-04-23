@@ -1,9 +1,15 @@
 package eu.stamp_project.examples.dnoo.dnooLogs;
 
-// **********************************************************************
-import java.util.logging.*;
-import java.io.IOException;
 import java.io.File;
+import java.util.Locale;
+// **********************************************************************
+import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
+import java.util.logging.Formatter;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 // **********************************************************************
 public class MyLogger
@@ -167,6 +173,7 @@ public class MyLogger
    {
       Formatter logFormater = null;
       boolean fileCreated = false;
+      Locale.setDefault(Locale.ENGLISH);
 
       if (Instance == null)
       {
