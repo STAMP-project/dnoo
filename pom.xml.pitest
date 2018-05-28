@@ -4,10 +4,10 @@
      xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>eu.stamp-project</groupId>
+  <groupId>eu.stamp-project.examples</groupId>
   <artifactId>dnoo</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.1</version>
+  <version>1.1.0</version>
 
   <modules>
      <module>dnooHello</module>
@@ -37,13 +37,16 @@
       <plugin>
         <groupId>org.pitest</groupId>
         <artifactId>pitest-maven</artifactId>
-        <version>1.3.2</version>
+        <version>1.4.0</version>
+        <!--
         <configuration>
           <targetClasses>
-            <param>eu.stamp_project.examples.dnoo*</param>
+            <param>eu.stamp_project.examples.dnoo.dnooLogs*</param>
+            <param>eu.stamp_project.examples.dnoo.dnooStorage*</param>
+            <param>eu.stamp_project.examples.dnoo.dnooHello*</param>
+            <param>eu.stamp_project.examples.dnoo.dnooMain*</param>
+            <param>eu.stamp_project.examples.dnoo.dnooIntegration*</param>
           </targetClasses>
-          <!--
-          -->
           <excludedClasses>
             <param>eu.stamp_project.examples.dnoo.dnooLogs.MyUselessClass</param>
           </excludedClasses>
@@ -54,7 +57,18 @@
             <param>eu.stamp_project.examples.dnoo.dnooHello.HelloApp.cardMyTraces</param>
             <param>eu.stamp_project.examples.dnoo.dnooHello.HelloApp.getMyTraces</param>
           </excludedMethods>
+          <exportLineCoverage>true</exportLineCoverage>
+          <outputFormats><value>XML</value></outputFormats>
         </configuration>
+        <executions>
+          <execution>
+            <id>run-mutation-tests</id>
+            <goals>
+              <goal>mutationCoverage</goal>
+            </goals>
+          </execution>
+        </executions>
+        -->
       </plugin>
 
       <plugin>

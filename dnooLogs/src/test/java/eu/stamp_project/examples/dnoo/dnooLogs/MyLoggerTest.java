@@ -10,40 +10,40 @@ import eu.stamp_project.examples.dnoo.dnooLogs.MyLogger;
 
 public class MyLoggerTest
 {
-   // **********************************************************************
-   // public
-   // **********************************************************************
-   // <cael>: to do: ignore it because it fails with pitest, so find why
-   @Ignore
-   @Test
-   public void testMyLoggerDefault() throws Exception
-   {
-      System.out.println("******** testMyLoggerDefault");
+    // **********************************************************************
+    // public
+    // **********************************************************************
+    // <cael>: to do: ignore it because it fails with pitest, so find why
+    @Ignore
+    @Test
+    public void testMyLoggerDefault() throws Exception
+    {
+        System.out.println("******** testMyLoggerDefault");
 
-      MyLogger.getLogger().info("testMyLoggerDefault - level = " + MyLogger.getLevel());
-      assertEquals(MyLogger.getLevel(), "WARNING");
-   }
+        MyLogger.getLogger().info("testMyLoggerDefault - level = " + MyLogger.getLevel());
+        assertEquals(MyLogger.getLevel(), "WARNING");
+    }
 
-   // **********************************************************************
-   @Test
-   public void testMyLoggerSetLevel1() throws Exception
-   {
-      System.out.println("******** testMyLoggerSetLevel1");
-      MyLogger.setLevel("FINE");
+    // **********************************************************************
+    @Test
+    public void testMyLoggerSetLevel1() throws Exception
+    {
+        System.out.println("******** testMyLoggerSetLevel1");
+        MyLogger.setLevel("FINE");
 
-      MyLogger.getLogger().info("testMyLoggerSetLevel1: FINE");
-      assertEquals(MyLogger.getLevel(), "FINE");
-   }
+        MyLogger.getLogger().info("testMyLoggerSetLevel1: FINE");
+        assertEquals(MyLogger.getLevel(), "FINE");
+    }
 
-   // **********************************************************************
-   @Test
-   public void testMyLoggerSetLevel2() throws Exception
-   {
-      System.out.println("******** testMyLoggerSetLevel2");
-      MyLogger.setLevel("ALL");
+    // **********************************************************************
+    @Test
+    public void testMyLoggerSetLevel2() throws Exception
+    {
+        System.out.println("******** testMyLoggerSetLevel2");
+        MyLogger.setLevel("ALL");
 
-      MyLogger.getLogger().info("testMyLoggerSetLevel2: ALL");
-      assertEquals(MyLogger.getLevel(), "ALL");
-   }
+        MyLogger.getLogger().info("testMyLoggerSetLevel2: ALL");
+        assertEquals(MyLogger.getLevel(), "ALL");
+    }
 
 }
