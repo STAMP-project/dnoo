@@ -3,12 +3,13 @@ DNOO
 
 A very simple application to test testing tools, but with a multi module structure. :-))))
 
+
 Compiling
--------------
+---------
 mnv install
 
 Running Descartes
-------------------
+-----------------
 run_pitmp_descartes.sh
 
 Application classes

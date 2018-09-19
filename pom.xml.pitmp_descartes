@@ -38,34 +38,13 @@
       <plugin>
         <groupId>eu.stamp-project</groupId>
         <artifactId>pitmp-maven-plugin</artifactId>
-        <version>1.2.0</version>
+        <version>1.3.5-SNAPSHOT</version>
         <configuration>
-          <!--
-          <excludedClasses>
-            <param>eu.stamp_project.examples.dnoo.dnooLogs.MyUselessClass</param>
-          </excludedClasses>
-          <excludedMethods>
-            <param>eu.stamp_project.examples.dnoo.dnooLogs.MyLogger.stringToLevel</param>
-            <param>eu.stamp_project.examples.dnoo.dnooStorage.MyStorage.deleteFile</param>
-            <param>eu.stamp_project.examples.dnoo.dnooHello.HelloApp.myPrint</param>
-            <param>eu.stamp_project.examples.dnoo.dnooHello.HelloApp.cardMyTraces</param>
-            <param>eu.stamp_project.examples.dnoo.dnooHello.HelloApp.getMyTraces</param>
-          </excludedMethods>
-          -->
           <mutationEngine>descartes</mutationEngine>
+          <outputFormats>
+            <param>XML</param>
+          </outputFormats>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.pitest</groupId>
-            <artifactId>pitest-maven</artifactId>
-            <version>1.4.0</version>
-          </dependency>
-          <dependency>
-            <groupId>eu.stamp-project</groupId>
-            <artifactId>descartes</artifactId>
-            <version>1.2</version>
-          </dependency>
-       </dependencies>
       </plugin>
 
       <plugin>

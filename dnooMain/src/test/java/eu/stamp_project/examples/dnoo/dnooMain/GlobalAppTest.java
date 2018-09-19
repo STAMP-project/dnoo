@@ -28,6 +28,8 @@ public class GlobalAppTest
 
         myApp = new HelloApp(myCount, myTracesName);
         myApp.run();
+        assertEquals(true, myApp.getMyValues().getCount() == myCount);
+        assertEquals(true, myApp.getMyValues().getName().equals(myTracesName));
 
         fileContent = new MyStorage(myApp.getMyTracesName());
         fileContent.readData();

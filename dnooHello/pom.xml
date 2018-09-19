@@ -30,6 +30,12 @@
       <artifactId>dnooLogs</artifactId>
       <version>${project.parent.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>${project.parent.groupId}</groupId>
+      <artifactId>dnooNoTest</artifactId>
+      <version>${project.parent.version}</version>
+    </dependency>
   </dependencies>
 
   <!--

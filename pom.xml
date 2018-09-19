@@ -15,7 +15,7 @@
      <module>dnooLogs</module>
      <module>dnooMain</module>
      <module>dnooStorage</module>
-     <module>dnooReport</module>
+     <module>dnooNoTest</module>
   </modules>
 
   <properties>
@@ -39,9 +39,15 @@
         <groupId>org.pitest</groupId>
         <artifactId>pitest-maven</artifactId>
         <version>1.4.0</version>
+        <!--
         <configuration>
-          <!--
-          -->
+          <targetClasses>
+            <param>eu.stamp_project.examples.dnoo.dnooLogs*</param>
+            <param>eu.stamp_project.examples.dnoo.dnooStorage*</param>
+            <param>eu.stamp_project.examples.dnoo.dnooHello*</param>
+            <param>eu.stamp_project.examples.dnoo.dnooMain*</param>
+            <param>eu.stamp_project.examples.dnoo.dnooIntegration*</param>
+          </targetClasses>
           <excludedClasses>
             <param>eu.stamp_project.examples.dnoo.dnooLogs.MyUselessClass</param>
           </excludedClasses>
@@ -52,17 +58,18 @@
             <param>eu.stamp_project.examples.dnoo.dnooHello.HelloApp.cardMyTraces</param>
             <param>eu.stamp_project.examples.dnoo.dnooHello.HelloApp.getMyTraces</param>
           </excludedMethods>
-          <!--
-          -->
-          <mutationEngine>descartes</mutationEngine>
+          <exportLineCoverage>true</exportLineCoverage>
+          <outputFormats><value>XML</value></outputFormats>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>eu.stamp-project</groupId>
-            <artifactId>descartes</artifactId>
-            <version>1.2</version>
-          </dependency>
-        </dependencies>
+        <executions>
+          <execution>
+            <id>run-mutation-tests</id>
+            <goals>
+              <goal>mutationCoverage</goal>
+            </goals>
+          </execution>
+        </executions>
+        -->
       </plugin>
 
       <plugin>

@@ -3,6 +3,7 @@ package eu.stamp_project.examples.dnoo.dnooHello;
 // **********************************************************************
 import eu.stamp_project.examples.dnoo.dnooStorage.MyStorage;
 import eu.stamp_project.examples.dnoo.dnooLogs.MyLogger;
+import eu.stamp_project.examples.dnoo.dnooNoTest.SomeValues;
 
 // **********************************************************************
 public class HelloApp
@@ -92,6 +93,7 @@ public class HelloApp
 
         String indent = "-";
         String countString = Integer.toString(MyPrintCount);
+        MyValues = new SomeValues(MyPrintCount, MyTracesName);
 
         if (MyTracesName.length() > 0)
         {
@@ -179,6 +181,25 @@ public class HelloApp
     }
 
     // **********************************************************************
+    public int cardMyValues()
+    {
+        int theCard = 0;
+
+        if (MyValues != null)
+        {
+            theCard = 1;
+        }
+
+        return(theCard);
+    }
+
+    // **********
+    public SomeValues getMyValues()
+    {
+        return(MyValues);
+    }
+
+    // **********************************************************************
     // protected
     // **********************************************************************
     // ******** methods
@@ -200,5 +221,6 @@ public class HelloApp
     private int MyPrintCount;
     private String MyTracesName;
     private MyStorage MyTraces;
+    private SomeValues MyValues;
     private boolean ShouldPrintOnStdout;
 }
