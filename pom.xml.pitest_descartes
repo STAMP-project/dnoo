@@ -15,7 +15,7 @@
      <module>dnooLogs</module>
      <module>dnooMain</module>
      <module>dnooStorage</module>
-     <module>dnooReport</module>
+     <module>dnooNoTest</module>
   </modules>
 
   <properties>
@@ -52,8 +52,6 @@
             <param>eu.stamp_project.examples.dnoo.dnooHello.HelloApp.cardMyTraces</param>
             <param>eu.stamp_project.examples.dnoo.dnooHello.HelloApp.getMyTraces</param>
           </excludedMethods>
-          <!--
-          -->
           <mutationEngine>descartes</mutationEngine>
         </configuration>
         <dependencies>

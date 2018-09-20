@@ -36,40 +36,12 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.pitest</groupId>
-        <artifactId>pitest-maven</artifactId>
-        <version>1.4.0</version>
-        <!--
+        <groupId>eu.stamp-project</groupId>
+        <artifactId>pitmp-maven-plugin</artifactId>
+        <version>1.3.5</version>
         <configuration>
-          <targetClasses>
-            <param>eu.stamp_project.examples.dnoo.dnooLogs*</param>
-            <param>eu.stamp_project.examples.dnoo.dnooStorage*</param>
-            <param>eu.stamp_project.examples.dnoo.dnooHello*</param>
-            <param>eu.stamp_project.examples.dnoo.dnooMain*</param>
-            <param>eu.stamp_project.examples.dnoo.dnooIntegration*</param>
-          </targetClasses>
-          <excludedClasses>
-            <param>eu.stamp_project.examples.dnoo.dnooLogs.MyUselessClass</param>
-          </excludedClasses>
-          <excludedMethods>
-            <param>eu.stamp_project.examples.dnoo.dnooLogs.MyLogger.stringToLevel</param>
-            <param>eu.stamp_project.examples.dnoo.dnooStorage.MyStorage.deleteFile</param>
-            <param>eu.stamp_project.examples.dnoo.dnooHello.HelloApp.myPrint</param>
-            <param>eu.stamp_project.examples.dnoo.dnooHello.HelloApp.cardMyTraces</param>
-            <param>eu.stamp_project.examples.dnoo.dnooHello.HelloApp.getMyTraces</param>
-          </excludedMethods>
-          <exportLineCoverage>true</exportLineCoverage>
-          <outputFormats><value>XML</value></outputFormats>
+          <mutationEngine>descartes</mutationEngine>
         </configuration>
-        <executions>
-          <execution>
-            <id>run-mutation-tests</id>
-            <goals>
-              <goal>mutationCoverage</goal>
-            </goals>
-          </execution>
-        </executions>
-        -->
       </plugin>
 
       <plugin>
