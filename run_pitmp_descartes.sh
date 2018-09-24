@@ -1,7 +1,7 @@
 #!/bin/sh
 ################################################################################
 # $1 = outputFormat : XML | HTML | CSV
-currentD=`pwd`
+currentDir=`pwd`
 
 if test "X$1" = "X"
 then
